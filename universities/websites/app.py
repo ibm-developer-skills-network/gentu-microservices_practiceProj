@@ -13,20 +13,10 @@ with open("UK_Universities.json", "r") as unifile:
 def getCollegesWebsites(name):
     webpages = []
     for college in data:
-        if college["name"].__contains__(name):
+        if college["name"] == name:
             for website in college["web_pages"]:
                 webpages.append(website)
     return {"Webpages": webpages}
-
-
-# @app.route("/websites/<name>")
-# def getCollegesWebsites(name):
-#     webpages = []
-#     for college in data:
-#         if college["name"] == name:
-#             for website in college["web_pages"]:
-#                 webpages.append(website)
-#     return {"Webpages": webpages}
 
 
 if __name__ == "__main__":
