@@ -16,7 +16,7 @@ def getCollegesWebsites(name):
         if college["name"] == name:
             for website in college["web_pages"]:
                 webpages.append(website)
-    return {"Webpages": webpages}
+    return json.dumps({"Webpages": webpages},indent=4)
 
 
 if __name__ == "__main__":
