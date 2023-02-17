@@ -14,7 +14,7 @@ def getCollegesList():
     colleges = []
     for college in data:
         colleges.append(college["name"])
-    return {"Colleges": colleges}
+    return json.dumps({"Colleges": colleges},indent=4)
 
 
 @app.route("/colleges/<name>")
@@ -23,7 +23,7 @@ def getCollegesListByName(name):
     for college in data:
         if college["name"].__contains__(name):
             colleges.append(college["name"])
-    return {"Colleges": colleges}
+    return json.dumps({"Colleges": colleges},indent=4)
 
 
 if __name__ == "__main__":
